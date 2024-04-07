@@ -1,1 +1,2 @@
-# Just another CHIP-8 "emulator".
+# Just another original CHIP-8 "emulator"
+

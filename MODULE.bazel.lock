@@ -1,6 +1,6 @@
 {
   "lockFileVersion": 3,
-  "moduleFileHash": "0e3e315145ac7ee7a4e0ac825e1c5e03c068ec1254dd42c3caaecb27e921dc4d",
+  "moduleFileHash": "8a66209537be083495e3f4d3e9951214c4548cb85fde9518030815853780cdfe",
   "flags": {
     "cmdRegistries": [
       "https://bcr.bazel.build/"
@@ -25,8 +25,39 @@
       "toolchainsToRegister": [],
       "extensionUsages": [],
       "deps": {
+        "glog": "glog@0.7.0",
         "bazel_tools": "bazel_tools@_",
         "local_config_platform": "local_config_platform@_"
+      }
+    },
+    "glog@0.7.0": {
+      "name": "glog",
+      "version": "0.7.0",
+      "key": "glog@0.7.0",
+      "repoName": "glog",
+      "executionPlatformsToRegister": [],
+      "toolchainsToRegister": [],
+      "extensionUsages": [],
+      "deps": {
+        "com_github_gflags_gflags": "gflags@2.2.2",
+        "bazel_tools": "bazel_tools@_",
+        "local_config_platform": "local_config_platform@_"
+      },
+      "repoSpec": {
+        "bzlFile": "@bazel_tools//tools/build_defs/repo:http.bzl",
+        "ruleClassName": "http_archive",
+        "attributes": {
+          "name": "glog~0.7.0",
+          "urls": [
+            "https://github.com/google/glog/archive/refs/tags/v0.7.0.tar.gz"
+          ],
+          "integrity": "sha256-N1EGtZdiMbkuZoecGpLOBikjua5XPEK1a6KLES7kzBE=",
+          "strip_prefix": "glog-0.7.0",
+          "remote_patches": {
+            "https://bcr.bazel.build/modules/glog/0.7.0/patches/module_dot_bazel.patch": "sha256-dpvoBmen7sy1z8dZCEnpeTC4GYxKcofowoyGgLcoQOY="
+          },
+          "remote_patch_strip": 0
+        }
       }
     },
     "bazel_tools@_": {
@@ -174,6 +205,35 @@
       "deps": {
         "platforms": "platforms@0.0.7",
         "bazel_tools": "bazel_tools@_"
+      }
+    },
+    "gflags@2.2.2": {
+      "name": "gflags",
+      "version": "2.2.2",
+      "key": "gflags@2.2.2",
+      "repoName": "gflags",
+      "executionPlatformsToRegister": [],
+      "toolchainsToRegister": [],
+      "extensionUsages": [],
+      "deps": {
+        "bazel_tools": "bazel_tools@_",
+        "local_config_platform": "local_config_platform@_"
+      },
+      "repoSpec": {
+        "bzlFile": "@bazel_tools//tools/build_defs/repo:http.bzl",
+        "ruleClassName": "http_archive",
+        "attributes": {
+          "name": "gflags~2.2.2",
+          "urls": [
+            "https://github.com/gflags/gflags/archive/refs/tags/v2.2.2.tar.gz"
+          ],
+          "integrity": "sha256-NK8vFc9zZ1E7NSvc0kk6sUzkNpLS3NnfxJlJKWbGTc8=",
+          "strip_prefix": "gflags-2.2.2",
+          "remote_patches": {
+            "https://bcr.bazel.build/modules/gflags/2.2.2/patches/module_dot_bazel.patch": "sha256-BVSk+8ijV+s6djcokSgSZGlP153Q+rvF2h9W/AG53Zo="
+          },
+          "remote_patch_strip": 0
+        }
       }
     },
     "rules_cc@0.0.9": {

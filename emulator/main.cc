@@ -1,5 +1,5 @@
-#include <iostream>
+#include "base/logging.h"
 
 int main() {
-  std::cout << "working\n";
+  LOG(ERROR) << "working";
 }

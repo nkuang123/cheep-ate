@@ -1,7 +1,14 @@
+cc_library(
+  name = "cheep_ate",
+  srcs = ["cheep_ate.cc"],
+  hdrs = ["cheep_ate.h"],
+)
+
 cc_binary(
   name = "cheep_ate_main",
-  srcs = ["main.cc"],
+  srcs = ["cheep_ate_main.cc"],
   deps = [
+    ":cheep_ate",
     "//base:logging",
   ],
 )

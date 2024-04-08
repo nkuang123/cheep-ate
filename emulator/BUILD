@@ -6,17 +6,11 @@ cc_library(
   hdrs = ["cheep_ate.h"],
 )
 
-cc_library(
-  name = "emulator_types",
-  hdrs = ["emulator_types.h"],
-)
-
 cc_binary(
   name = "cheep_ate_main",
   srcs = ["cheep_ate_main.cc"],
   deps = [
     ":cheep_ate",
-    ":emulator_types",
     "//base:logging",
     "//roms:rom_reader",
   ],

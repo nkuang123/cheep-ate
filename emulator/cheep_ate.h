@@ -22,20 +22,20 @@ class CheepAte {
   void Execute();
 
   // Program memory.
-  std::array<char, kRamBufferSize> ram;
+  std::array<char, kRamBufferSize> ram_;
 
   // Points to current instruction in memory.
-  uint16_t program_counter;
+  uint16_t program_counter_;
 
   // Points to location addresses in memory.
-  uint16_t index_register;
+  uint16_t index_register_;
 
   // Execution stack. Used to call and return from subroutines so only addresses
   // are stored.
-  std::stack<uint16_t> execution_stack;
+  std::stack<uint16_t> execution_stack_;
 
   // General-purpose variable registers.
-  std::array<char, kNumVariableRegisters> variable_registers;
+  std::array<char, kNumVariableRegisters> variable_registers_;
 };
 
 }  // namespace emulator
